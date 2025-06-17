@@ -1,0 +1,806 @@
+fileFormatVersion: 2
+guid: 1f9931c6f9baad841a94fe22a9069b08
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Air_conditioner.001
+    second: {fileID: 2100000, guid: 58ab24c690007ea4aa389c00c08bc24d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baards_Baked.001
+    second: {fileID: 2100000, guid: a54795d923832cd4d8e96b00104274ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brain01Mat
+    second: {fileID: 2100000, guid: f4a8be869c321d44fb55baf92c8718ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brain02Mat
+    second: {fileID: 2100000, guid: 57ed4ef8d8c88344083862b3068e9064, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brain03Mat
+    second: {fileID: 2100000, guid: 9cf52482f8816024d8e397e7f2f3aab2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brain04Mat.002
+    second: {fileID: 2100000, guid: a15c0438560cd1848a234e9f6dc69267, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cabinet_Baked
+    second: {fileID: 2100000, guid: bd93214254ecd52458f52627c9c4351f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Container_1.001
+    second: {fileID: 2100000, guid: 40a2c3bddeb21534aa482f13d171269e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Digestive_System
+    second: {fileID: 2100000, guid: 60a5dbdb8b8eece4b88ba1923bd8c050, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Doors_Baked
+    second: {fileID: 2100000, guid: 32cc9f4685d0ca74c804dfb05caf25a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ear LP_Baked
+    second: {fileID: 2100000, guid: 7885e766c5b27f54fac291cb38643645, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Extinguisher.001
+    second: {fileID: 2100000, guid: 31e9e4396aba27845b3d888231a48b20, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass placeholder
+    second: {fileID: 2100000, guid: 222738dd6b1dff1488ce2f7ede4080f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Holograms_Baked
+    second: {fileID: 2100000, guid: 5378602c8f3b93f4cae3c10670c0b197, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Jar01Glass
+    second: {fileID: 2100000, guid: 88d100c9ccda6ba409ed0fa7c852109d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Jar01Mat
+    second: {fileID: 2100000, guid: a39274bee31a2534088db980f8de2aad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Jar02Glass
+    second: {fileID: 2100000, guid: b419188b07dff4d42bb4b725e282650e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Jar02Mat
+    second: {fileID: 2100000, guid: 4ddc5824822de5f44be479b77eddd398, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Jar03Glass
+    second: {fileID: 2100000, guid: 1146b0dd79ec176478cb28db71ca07eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Jar03Mat
+    second: {fileID: 2100000, guid: 4143dad49251c454ba170c98ef5acba9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Jar04Glass
+    second: {fileID: 2100000, guid: 2674e23dbc282d54f9fa46e26953c973, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Jar04Mat
+    second: {fileID: 2100000, guid: ff330e04fc98a074096b60c15096720a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lab_Baked
+    second: {fileID: 2100000, guid: fc5ac129be15a2a45a225368bee41434, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 74700987170f2d445b9ef8d76101672b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
+    second: {fileID: 2100000, guid: 30d3e74220e3f1d43bb405219fc159e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Others_Baked
+    second: {fileID: 2100000, guid: 8e692baed2f3e8c4da64dc71dee93e9b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Projector glow
+    second: {fileID: 2100000, guid: 609936e6c01ba164ab846272e323862e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Retopo_Human Kidney.002_Baked
+    second: {fileID: 2100000, guid: 26403070bfd78eb48b8ed4b5a384eff0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Retopo_Realistic Human Heart_Baked
+    second: {fileID: 2100000, guid: a6441ce317c67f04c84db0d73766099a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Signs and posters baked
+    second: {fileID: 2100000, guid: a2540de3b7efe7e45ad20ad091e3dec6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tables_Baked
+    second: {fileID: 2100000, guid: 38bd55d7662d2d745b0bcb3b98752b11, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: box.001
+    second: {fileID: 2100000, guid: 695644c5ff870264b82909fe62c7d3b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chair_1.002
+    second: {fileID: 2100000, guid: 181e27cef5fc4154bb7e058299f4d72a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: clinical_fabric.001
+    second: {fileID: 2100000, guid: 5fe5f4de7b26bca4aafe03f27c0b5b0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: files.001
+    second: {fileID: 2100000, guid: a531089dd4ed8624987cf10696f19822, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: files.002
+    second: {fileID: 2100000, guid: 83dc4b28c5bbf6347a30662fcaa93cf4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: firealarm.001
+    second: {fileID: 2100000, guid: fa94af787f82966468128619b400fa43, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hospital_wood_1.001
+    second: {fileID: 2100000, guid: 63b32e610b811dc42a8d52fe4703d948, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hospital_wood_1.002
+    second: {fileID: 2100000, guid: 9395446b1b898eb4eb04a666c11c6ef4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material.003
+    second: {fileID: 2100000, guid: 0ee58df4e3c4c6641af2ae3aaf2ff655, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_0
+    second: {fileID: 2100000, guid: 9499e0dc0b536b94596ef3cb3edb00d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_0.001
+    second: {fileID: 2100000, guid: 1fb41d65c60435546850e64d6b61c1c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_1.001
+    second: {fileID: 2100000, guid: 6326a36c60a600e419b1b4c8148eef75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_2.001
+    second: {fileID: 2100000, guid: 681f9cd706d081247ab192792dcb7df1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_3.002
+    second: {fileID: 2100000, guid: 7826e7fe8e2bbc6419c97fcec3c28bdf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_5.001
+    second: {fileID: 2100000, guid: 2528b3e5ddf70e847bbdbdc8bc79545a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_6.001
+    second: {fileID: 2100000, guid: ad3be19227c50b84fb8ac3a7bf94e195, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: medicine_1.002
+    second: {fileID: 2100000, guid: ec4904784e32f484e8fce89178a8c054, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: medicine_2.001
+    second: {fileID: 2100000, guid: 56a8a294c9c88074da39f6a53768ffbe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: medicine_5.001
+    second: {fileID: 2100000, guid: d4c5b8f9ae63e964e98179ea48143978, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: medicine_6.001
+    second: {fileID: 2100000, guid: 85042220c320912478803708b44baef8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: medicine_6.003
+    second: {fileID: 2100000, guid: 0aee89fe5dc99f643b8e5bcecc8b76f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metallic_1.002
+    second: {fileID: 2100000, guid: db1e4043b300dc243a40c30e2be8fb74, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metallic_2.003
+    second: {fileID: 2100000, guid: 809110c963c674540b0be889cf8ec8e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: microscope.001
+    second: {fileID: 2100000, guid: 9fe3b0cf3b1c95a45ba6f7879e25e83f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mirror.001
+    second: {fileID: 2100000, guid: c78206b8b1660894a9c73105f58ebd9e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paper.001
+    second: {fileID: 2100000, guid: 5a3166597b2717a49a162aedac52e391, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plugs.002
+    second: {fileID: 2100000, guid: ca67372e958a91941b7b2b9db9f48336, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: posters.001
+    second: {fileID: 2100000, guid: 51f3b4baf618c334987b76fe5810912b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: posters.002
+    second: {fileID: 2100000, guid: ced2beff2756a874385ba9f668792d2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: posters.004
+    second: {fileID: 2100000, guid: a8bd1affdfe2a294890ba31cc4a3a043, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: posters.005
+    second: {fileID: 2100000, guid: b82d35db60cc9f844b4df1b583ff8a88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: posters.006
+    second: {fileID: 2100000, guid: 26b282b214f8d1b44ba16ac7077898e0, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Air conditioner
+    second: {fileID: 2800000, guid: 9dba7f50cbf31f748958dccef08165f2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Air conditioner N
+    second: {fileID: 2800000, guid: 3e2efb8e0e4b8a741aa3f0a57a96e57e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Baards__PBR_Diffuse
+    second: {fileID: 2800000, guid: d630121952ece834fbb68608bc514b03, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Baards__PBR_Metalness
+    second: {fileID: 2800000, guid: 666f4d544cc43c74980f0df16f2cf780, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Baards__PBR_Normal
+    second: {fileID: 2800000, guid: d346bc57f5b11a14ebba062e036c0c88, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Baards__PBR_Roughness
+    second: {fileID: 2800000, guid: f6f4e573b7cd84047bc3dd70cd16399a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Brain01Mat_baseColor
+    second: {fileID: 2800000, guid: fcccbf06c11f1a041aef054d9fb92c22, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Brain02Mat_baseColor
+    second: {fileID: 2800000, guid: 2c798b84a8093444c9e328587bd43fe6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Brain03Mat_baseColor
+    second: {fileID: 2800000, guid: fb28ec56abe962c4da1522845da30dba, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Brain04Mat_baseColor
+    second: {fileID: 2800000, guid: b25ba869caa01984fa5f57f036b4dd72, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Cabinet__PBR_Diffuse
+    second: {fileID: 2800000, guid: 9f7ea31edac5390449a243a31ddfff7a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Cabinet__PBR_Metalness
+    second: {fileID: 2800000, guid: 794aa3e1029761f409ed21573b84c5a3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Cabinet__PBR_Normal
+    second: {fileID: 2800000, guid: bde679743ece0194cb3e9573a9715f18, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Cabinet__PBR_Roughness
+    second: {fileID: 2800000, guid: 6a126a05906586c41b09e6ecb883ec5c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Container 1
+    second: {fileID: 2800000, guid: 9ccea84f399330f4ab43da84d07599ae, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Doors__PBR_Diffuse
+    second: {fileID: 2800000, guid: 24ac7ffa853fa9c4ab2496962b5340a2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Doors__PBR_Metalness
+    second: {fileID: 2800000, guid: f88cb07387d7de64fa9cfd34ed5b2652, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Doors__PBR_Normal
+    second: {fileID: 2800000, guid: 7cae7d7568b4c6f4199fa392c7db0269, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Doors__PBR_Roughness
+    second: {fileID: 2800000, guid: 417ff3b9fc31f5d46b1340aa672b044a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ear LP__PBR StoA_Alpha
+    second: {fileID: 2800000, guid: d4eae1d128aa8e94d82ebe1f4d479d77, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ear LP__PBR StoA_Diffuse
+    second: {fileID: 2800000, guid: 2522e9fa72932b24f87a95d568ef3450, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Extinguisher
+    second: {fileID: 2800000, guid: ac3aeaefda282d940ac4fb143f3cda11, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Holograms__PBR_Diffuse
+    second: {fileID: 2800000, guid: 6f3f22e5f265d4944921f4675591e2b4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Holograms__PBR_Emission
+    second: {fileID: 2800000, guid: 5d26b05e22bd29f43893052b64569eaa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Holograms__PBR_Metalness
+    second: {fileID: 2800000, guid: f5bb56a59ae16774da2c957dd133c5e6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Holograms__PBR_Normal
+    second: {fileID: 2800000, guid: 0018bb938384cee4192ca33773a3b81e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Holograms__PBR_Roughness
+    second: {fileID: 2800000, guid: 2edbe74ddd1724e4a8dc0e83a28a287c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Jar01Glass_baseColor
+    second: {fileID: 2800000, guid: 2df14d367e14e434592884ad327c0fd7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Jar01Mat_baseColor
+    second: {fileID: 2800000, guid: a7162f9720f9e0646ba975f965e6f67b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Jar02Glass_baseColor
+    second: {fileID: 2800000, guid: 3f40452302759de4aa3863ebdce3779e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Jar02Mat_baseColor
+    second: {fileID: 2800000, guid: dd0a410b185a72e4dad816a03d6e2568, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Jar03Glass_baseColor
+    second: {fileID: 2800000, guid: f2f187bd2db8fbe418c537a56c690ca5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Jar03Mat_baseColor
+    second: {fileID: 2800000, guid: ff6780e141852904c912b1c6afe0c405, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Jar04Glass_baseColor
+    second: {fileID: 2800000, guid: 692ba470e20bf4d4dba255e1e0b660a0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Jar04Mat_baseColor
+    second: {fileID: 2800000, guid: 1b5130a71c5ed774eb824ae19adecceb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LP_digestive_system__PBR StoA_Diffuse
+    second: {fileID: 2800000, guid: 0e875547f50e3ee4ab71e5fe2bf90779, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lab__PBR_Diffuse
+    second: {fileID: 2800000, guid: 373dbae36a36e9444b175f402a4601ad, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lab__PBR_Emission
+    second: {fileID: 2800000, guid: 176a30b9af8c0644eab9e340d4face10, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lab__PBR_Metalness
+    second: {fileID: 2800000, guid: 7c9efd591906b9d4ca76a5692501719e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lab__PBR_Normal
+    second: {fileID: 2800000, guid: 7bcb32a0e3cf88443a236e946f6b22f3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lab__PBR_Roughness
+    second: {fileID: 2800000, guid: 6f551908a16f80944a548b37c7be9313, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Material.003_baseColor
+    second: {fileID: 2800000, guid: 6d188d59eaa96074ab8bd1a868f5448f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Others__PBR_Diffuse
+    second: {fileID: 2800000, guid: 45f1c95c82bfde649bf427b75aa18360, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Others__PBR_Metalness
+    second: {fileID: 2800000, guid: 730bb9bea18eb3545b4bd616be492428, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Others__PBR_Normal
+    second: {fileID: 2800000, guid: ecb104b2878755340b5a9595d65cd608, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Others__PBR_Roughness
+    second: {fileID: 2800000, guid: 0507d4f3ad0a5874988877b0e8a9f725, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Retopo_Human Kidney.002__PBR StoA_Diffuse
+    second: {fileID: 2800000, guid: 9958dc30773945b4a9714c843002b086, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Retopo_Human Kidney.002__PBR StoA_Metalness
+    second: {fileID: 2800000, guid: 06a3e1e0b5dd4494cbcd9e1a5e02f1bb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Retopo_Human Kidney.002__PBR StoA_Normal
+    second: {fileID: 2800000, guid: 27d6a5f9e58139e45b0d502849a16826, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Retopo_Human Kidney.002__PBR StoA_Roughness
+    second: {fileID: 2800000, guid: e696ce90c604acd4e94f634a58695c1c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Retopo_Realistic Human Heart__PBR StoA_Diffuse
+    second: {fileID: 2800000, guid: 4fbc3a943ad6d0d4e981ca793f9524d8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Retopo_Realistic Human Heart__PBR StoA_Roughness
+    second: {fileID: 2800000, guid: dce63b9b470c53843bf261522f03afee, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tables__PBR_Diffuse
+    second: {fileID: 2800000, guid: 6a20175a917e3b54f92b483af9487481, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tables__PBR_Metalness
+    second: {fileID: 2800000, guid: bd35f78be03411b4199b55518588176c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tables__PBR_Normal
+    second: {fileID: 2800000, guid: 93653ca49a7c843479625d9bdbe9a1d8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tables__PBR_Roughness
+    second: {fileID: 2800000, guid: eb03517dfbd9dba43860c34c166c1505, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall decor__PBR_Alpha
+    second: {fileID: 2800000, guid: 73c7e14f01675cf43ade46368e31c315, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall decor__PBR_Diffuse
+    second: {fileID: 2800000, guid: a190587bc63969944ab04869995146b9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall decor__PBR_Metalness
+    second: {fileID: 2800000, guid: d5be8cf9ab9ce594da06af8def3a5a73, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall decor__PBR_Normal
+    second: {fileID: 2800000, guid: 5639f802088da764a82d0cc3669448f6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall decor__PBR_Roughness
+    second: {fileID: 2800000, guid: edfc637aebeec9540bb450bec5e93384, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: box
+    second: {fileID: 2800000, guid: d2fb2a51766b1874cb58e3b70f64cb94, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: boxes N
+    second: {fileID: 2800000, guid: 133205e618f73a34ca2fad019c073763, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair 1
+    second: {fileID: 2800000, guid: d57326841f9b3444c9ba2d9a2ffb9333, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: clinical fabric
+    second: {fileID: 2800000, guid: 32dfd6e488a3b2148bf9c02809b4187d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: files
+    second: {fileID: 2800000, guid: 1002ff95bd253034ca76480c3c7556b7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: firealarm
+    second: {fileID: 2800000, guid: f29647dc43c77a04dbea0e30300dbe07, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: hospital wood 1
+    second: {fileID: 2800000, guid: 5862c38247df309488486425a92220be, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: material_4_baseColor
+    second: {fileID: 2800000, guid: 56e1db903eda1b948b1d4bd890c33ebe, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: medicine 1
+    second: {fileID: 2800000, guid: 324a3efa64e5c99459259339185b4139, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: medicine 2
+    second: {fileID: 2800000, guid: 3dbdc3dc2bbdbf34ebd6efac406b862a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: medicine 5
+    second: {fileID: 2800000, guid: 622c0d19daebfd246a9e2724a2d315f5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: medicine 6
+    second: {fileID: 2800000, guid: 4e5c32343107ce54d9970331cb07d616, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: microscope
+    second: {fileID: 2800000, guid: 9de60c89b3b536649b84eb1579e5a41c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: paper
+    second: {fileID: 2800000, guid: ddb2d98afae21df40af1074ed9ec17ab, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: plugs
+    second: {fileID: 2800000, guid: b15d34b7ecf5c034e9a5c15a8fd42e55, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: posters
+    second: {fileID: 2800000, guid: f05a7cebd98367e4a9ec3b05dd5bfb01, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 3
+    addColliders: 1
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

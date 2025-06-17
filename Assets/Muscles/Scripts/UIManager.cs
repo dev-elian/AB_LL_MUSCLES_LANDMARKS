@@ -21,9 +21,6 @@ public class UIManager : MonoBehaviour {
     Coroutine _scaleRoutine;
     bool _visible = false;
 
-    void Awake() {
-        DisableAll();
-    }
     void OnEnable() {
         InputController.Instance.OnMenuButtonPressed += SetPanelVisibility;
         _btnResetMuscle.onClick.AddListener(ResetMusclePositions);

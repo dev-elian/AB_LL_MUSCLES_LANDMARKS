@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,28 +7,34 @@ public class InfoManager : MonoBehaviour {
     public float laserDistance = 10f;
     public Transform laserOrigin;
 
-    public string interactableTag = "Muscles"; // Tag for objects you want to interact with
+    public string interactableTag = "Muscles";
 
     public Transform musclesContainer;
     public Transform togglesContainer;
     public Transform descriptionsContainer;
-    public TextMeshProUGUI infoText; // UI Text element to display object information
+    public TextMeshProUGUI infoText;
 
-    public GameObject[] objectsToHit; // Array of interactable objects
+    public GameObject[] objectsToHit; 
     public TextMeshProUGUI[] textOfToggle;
     public GameObject[] descriptions;
 
-
     void Awake() {
-        // Initialize the arrays based on the number of children in the containers
-        int muscleCount = musclesContainer.childCount;
+        StartCoroutine(Initializeinfo());
+    }
+
+    IEnumerator Initializeinfo() {
+        while (!MuscleFunctions.Instance.initialized) {
+            yield return new WaitForSeconds(.1f);
+        }
+        yield return new WaitForSeconds(.1f);
+        int muscleCount = MuscleFunctions.Instance._legMuscles.Count;
         objectsToHit = new GameObject[muscleCount];
         textOfToggle = new TextMeshProUGUI[muscleCount];
         descriptions = new GameObject[muscleCount];
         for (int i = 0; i < muscleCount; i++) {
-            //objectsToHit[i] = musclesContainer.GetChild(i).gameObject;
-            //textOfToggle[i] = togglesContainer.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>();
-            //descriptions[i] = descriptionsContainer.GetChild(i).gameObject;
+            objectsToHit[i] = MuscleFunctions.Instance._legMuscles[i].MuscleObject;
+            textOfToggle[i] = togglesContainer.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>();
+            descriptions[i] = descriptionsContainer.GetChild(i).gameObject;
         }
     }
 
@@ -41,7 +48,7 @@ public class InfoManager : MonoBehaviour {
             DisableOld();
     }
 
-    int oldIndex = -1; // To keep track of the previously highlighted object
+    int oldIndex = -1; 
 
     void DisableOld() {
         if (oldIndex != -1) {

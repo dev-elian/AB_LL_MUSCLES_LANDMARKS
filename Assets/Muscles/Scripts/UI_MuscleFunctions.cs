@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,16 +14,17 @@ public class UI_MuscleFunctions : MonoBehaviour
     [SerializeField] TMPro.TMP_Dropdown _type;
     [SerializeField] TMPro.TMP_Dropdown _plane;
     [SerializeField] TMPro.TMP_Dropdown _movement;
-    [SerializeField] Toggle _showAnimation;
 
-    void Awake() {
+    IEnumerator Start() {
+        while (!MuscleFunctions.Instance.initialized) {
+            yield return new WaitForSeconds(.1f);
+        }
         _joint.value = 0;
         _type.value = 0; // Default to "Muscle" type
         _panelPlane.SetActive(true); // Show plane panel for "Muscle" type
         _panelMovement.SetActive(false);
         SetMovementOptions(0);
         _movement.value = 0; // Default to first movement option
-        _showAnimation.isOn = true; // Default to showing animation
         _showSelected.isOn = false;
         OnShowSelectedChanged(false);
     }
@@ -33,8 +35,8 @@ public class UI_MuscleFunctions : MonoBehaviour
         _type.onValueChanged.AddListener(OnTypeChanged);
         _plane.onValueChanged.AddListener(OnPlaneChanged);
         _movement.onValueChanged.AddListener(OnMovementChanged);
-        _showAnimation.onValueChanged.AddListener(OnShowAnimationChanged);
-        Select();
+        if (MuscleFunctions.Instance != null && MuscleFunctions.Instance.initialized)
+            Select();
     }
 
     void OnDisable() {
@@ -43,7 +45,6 @@ public class UI_MuscleFunctions : MonoBehaviour
         _type.onValueChanged.RemoveListener(OnTypeChanged);
         _plane.onValueChanged.RemoveListener(OnPlaneChanged);
         _movement.onValueChanged.RemoveListener(OnMovementChanged);
-        _showAnimation.onValueChanged.RemoveListener(OnShowAnimationChanged);
     }
 
     void OnShowSelectedChanged(bool active) {
@@ -52,7 +53,6 @@ public class UI_MuscleFunctions : MonoBehaviour
         _type.interactable = active;
         _plane.interactable = active;
         _movement.interactable = active;
-        _showAnimation.interactable  = active;
         Select();
     }
 
@@ -77,10 +77,10 @@ public class UI_MuscleFunctions : MonoBehaviour
 
     void Select() {
         if (_type.value == 0)
-            MuscleFunctions.Instance.SetMusclesByPlane((LegJoint)_joint.value, (LegPlane)_plane.value, _showAnimation.isOn);
+            MuscleFunctions.Instance.SetMusclesByPlane((LegJoint)_joint.value, (LegPlane)_plane.value);
         else {
             var x = GetMovementFromDropdown(_movement.options[_movement.value].text);
-            MuscleFunctions.Instance.SetMusclesByMovement((LegJoint)_joint.value, x, _showAnimation.isOn);
+            MuscleFunctions.Instance.SetMusclesByMovement((LegJoint)_joint.value, x);
         }
     }
 

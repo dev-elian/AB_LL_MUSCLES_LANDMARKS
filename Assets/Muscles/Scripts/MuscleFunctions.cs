@@ -5,7 +5,7 @@ using UnityEngine;
 public class MuscleFunctions : MonoBehaviour
 {
     public static MuscleFunctions Instance { get; private set; }
-
+    public bool initialized = false;
     public bool active = true;
     public bool transitioning = false;
     [SerializeField] Material _transitionToTransparentMaterial;
@@ -527,7 +527,7 @@ public class MuscleFunctions : MonoBehaviour
         }
     }
 
-    public void SetMusclesByPlane(LegJoint legJoint, LegPlane legPlane, bool showAnimation) {
+    public void SetMusclesByPlane(LegJoint legJoint, LegPlane legPlane) {
         ShowAllMuscles();
         if (!active) return;
         transitioning = true;
@@ -559,7 +559,7 @@ public class MuscleFunctions : MonoBehaviour
         StartCoroutine(FadeAlphas());
     }
 
-    public void SetMusclesByMovement(LegJoint legJoint, LegMovement legMovement, bool showAnimation) {
+    public void SetMusclesByMovement(LegJoint legJoint, LegMovement legMovement) {
         ShowAllMuscles();
         if (!active) return;
         transitioning = true;

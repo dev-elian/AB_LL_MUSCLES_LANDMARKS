@@ -2,13 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using System.Collections.Generic;
 
-[Serializable]
-public class ToggleObject {
-    public GameObject gameObject;
-    public Toggle toggle;
-}
 public class UIManager : MonoBehaviour {
     [Header("Canvas")]
     public GameObject infoCanvas;

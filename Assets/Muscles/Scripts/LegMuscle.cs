@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 [Serializable]
 public class LegMuscle {

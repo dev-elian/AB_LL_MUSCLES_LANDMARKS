@@ -13,7 +13,7 @@ public class MuscleFunctions : MonoBehaviour
     [SerializeField] Material _muscleMaterial;
     [SerializeField] Material _transparentMaterial;
     //GameObjects are assigned in editor DATA FROM WEBSITE
-    [SerializeField] List<LegMuscle> _legMuscles = new()  {
+    public List<LegMuscle> _legMuscles = new()  {
         new LegMuscle {
             Name = "Adductor Brevis",
             Joint1 = LegJoint.Hip,

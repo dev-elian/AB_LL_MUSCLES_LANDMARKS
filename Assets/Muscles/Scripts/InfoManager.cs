@@ -25,9 +25,9 @@ public class InfoManager : MonoBehaviour {
         textOfToggle = new TextMeshProUGUI[muscleCount];
         descriptions = new GameObject[muscleCount];
         for (int i = 0; i < muscleCount; i++) {
-            objectsToHit[i] = musclesContainer.GetChild(i).gameObject;
-            textOfToggle[i] = togglesContainer.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>();
-            descriptions[i] = descriptionsContainer.GetChild(i).gameObject;
+            //objectsToHit[i] = musclesContainer.GetChild(i).gameObject;
+            //textOfToggle[i] = togglesContainer.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>();
+            //descriptions[i] = descriptionsContainer.GetChild(i).gameObject;
         }
     }
 

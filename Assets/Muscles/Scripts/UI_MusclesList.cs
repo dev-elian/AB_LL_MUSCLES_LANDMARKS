@@ -11,7 +11,10 @@ public class UI_MusclesList : MonoBehaviour
     [SerializeField] Transform _togglesContainer;
     [SerializeField] List<ToggleObject> _muscles = new();
 
+    UIManager _uiManager;
+
     void Awake() {
+        _uiManager = GetComponentInParent<UIManager>();
         StartCoroutine(Initialize());
     }
 
@@ -35,13 +38,14 @@ public class UI_MusclesList : MonoBehaviour
     }
 
     void OnEnable() {
+        _uiManager.OnMenuChanged += SetVisibles;
         _globalToggle.onValueChanged.AddListener(ToggleAllObjects);
-        ToggleAllObjects(true);
         _globalToggle.interactable = !MuscleFunctions.Instance.active;
         _globalToggle.isOn = !MuscleFunctions.Instance.active;
     }
 
     void OnDisable() {
+        _uiManager.OnMenuChanged -= SetVisibles;
         _globalToggle.onValueChanged.RemoveListener(ToggleAllObjects);
     }
 
@@ -49,6 +53,12 @@ public class UI_MusclesList : MonoBehaviour
         if (index >= 0 && index < _muscles.Count) {
             _muscles[index].muscleGameObject.SetActive(value);
         }
+    }
+
+    void SetVisibles() {
+        ToggleAllObjects(true);
+        _globalToggle.interactable = !MuscleFunctions.Instance.active;
+        _globalToggle.isOn = !MuscleFunctions.Instance.active;
     }
 
     void ToggleAllObjects(bool value) {

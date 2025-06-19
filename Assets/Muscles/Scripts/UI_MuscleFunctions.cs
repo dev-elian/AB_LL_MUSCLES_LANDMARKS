@@ -35,8 +35,10 @@ public class UI_MuscleFunctions : MonoBehaviour
         _type.onValueChanged.AddListener(OnTypeChanged);
         _plane.onValueChanged.AddListener(OnPlaneChanged);
         _movement.onValueChanged.AddListener(OnMovementChanged);
-        if (MuscleFunctions.Instance != null && MuscleFunctions.Instance.initialized)
+        if (MuscleFunctions.Instance != null && MuscleFunctions.Instance.initialized) {
+            _showSelected.isOn = MuscleFunctions.Instance.active;
             Select();
+        }
     }
 
     void OnDisable() {

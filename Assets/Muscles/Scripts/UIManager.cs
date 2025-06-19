@@ -4,6 +4,8 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class UIManager : MonoBehaviour {
+    public Action OnMenuChanged;
+
     [Header("Canvas")]
     public GameObject infoCanvas;
     public GameObject musclesCanvas;
@@ -64,18 +66,21 @@ public class UIManager : MonoBehaviour {
         DisableAll();
         infoCanvas.SetActive(toggled);
         _btnMuscleInfo.transform.GetChild(2).gameObject.SetActive(toggled);
+        OnMenuChanged?.Invoke();
     }
     void UI_EnableMuscles() {
         bool toggled = !musclesCanvas.activeInHierarchy;
         DisableAll();
         musclesCanvas.SetActive(toggled);
         _btnMuscleList.transform.GetChild(2).gameObject.SetActive(toggled);
+        OnMenuChanged?.Invoke();
     }
     void UI_EnableMuscleFunctions() {
         bool toggled = !muscleFunctionsCanvas.activeInHierarchy;
         DisableAll();
         muscleFunctionsCanvas.SetActive(toggled);
         _btnMuscleFunctions.transform.GetChild(2).gameObject.SetActive(toggled);
+        OnMenuChanged?.Invoke();
     }
     void ResetMusclePositions() {
         ResetThePositions.Instance.ResetPositions();
@@ -95,4 +100,10 @@ public class UIManager : MonoBehaviour {
         yield return ScaleRoutine(_scaleShown, _scaleHidden, _animationDuration);
         _visible = false;
     }
+}
+public enum LegMenu {
+    None = -1,
+    Info = 0,
+    Muscles = 1,
+    MuscleFunctions = 2
 }

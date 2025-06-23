@@ -1,7 +1,7 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class InfoManager : MonoBehaviour {
     public float laserDistance = 10f;
@@ -14,9 +14,10 @@ public class InfoManager : MonoBehaviour {
     public Transform descriptionsContainer;
     public TextMeshProUGUI infoText;
 
-    public GameObject[] objectsToHit; 
-    public TextMeshProUGUI[] textOfToggle;
+    public GameObject[] objectsToHit;
     public GameObject[] descriptions;
+    public CanvasGroup[] backgrounds;
+    public TextMeshProUGUI[] textOfToggle;
 
     void Awake() {
         StartCoroutine(Initializeinfo());
@@ -29,12 +30,14 @@ public class InfoManager : MonoBehaviour {
         yield return new WaitForSeconds(.1f);
         int muscleCount = MuscleFunctions.Instance._legMuscles.Count;
         objectsToHit = new GameObject[muscleCount];
-        textOfToggle = new TextMeshProUGUI[muscleCount];
         descriptions = new GameObject[muscleCount];
+        backgrounds = new CanvasGroup[muscleCount];
+        textOfToggle = new TextMeshProUGUI[muscleCount];
         for (int i = 0; i < muscleCount; i++) {
             objectsToHit[i] = MuscleFunctions.Instance._legMuscles[i].MuscleObject;
-            textOfToggle[i] = togglesContainer.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>();
             descriptions[i] = descriptionsContainer.GetChild(i).gameObject;
+            backgrounds[i] = togglesContainer.GetChild(i).GetChild(1).GetComponent<CanvasGroup>();
+            textOfToggle[i] = togglesContainer.GetChild(i).GetChild(2).GetComponent<TextMeshProUGUI>();
         }
     }
 
@@ -48,26 +51,45 @@ public class InfoManager : MonoBehaviour {
             DisableOld();
     }
 
-    int oldIndex = -1; 
+    int oldIndex = -1;
 
     void DisableOld() {
         if (oldIndex != -1) {
-            descriptions[oldIndex].SetActive(false);
+            backgrounds[oldIndex].alpha = 0f;
+            backgrounds[oldIndex].gameObject.SetActive(false);
             textOfToggle[oldIndex].color = Color.white;
-            oldIndex = -1; // Reset old index after disabling
+            textOfToggle[oldIndex].fontWeight = FontWeight.Bold;
+            textOfToggle[oldIndex].fontSize = 10;
+            descriptions[oldIndex].SetActive(false);
+            oldIndex = -1;
         }
     }
+
     void ShowObjectInfo(GameObject obj) {
         infoText.text = "";
         DisableOld();
-        // Find the index of the object in the array
-        int index = System.Array.IndexOf(objectsToHit, obj);
+        int index = Array.IndexOf(objectsToHit, obj);
         if (index != -1 && index < descriptions.Length && infoText != null) {
-            textOfToggle[index].color = Color.yellow;
             descriptions[index].SetActive(true);
+            textOfToggle[index].color = Color.yellow;
+            textOfToggle[index].fontWeight = FontWeight.Regular;
+            textOfToggle[index].fontSize = 12;
+            StartCoroutine(FadeIn(index));
+            oldIndex = index;
         }
-        oldIndex = index;
     }
 
+    IEnumerator FadeIn(int index) {
+        float duration = 0.3f;
+        float time = 0f;
+        backgrounds[index].gameObject.SetActive(true);
 
+        while (time < duration) {
+            float t = time / duration;
+            backgrounds[index].alpha = Mathf.Lerp(0f, 1f, t);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        backgrounds[index].alpha = 1f;
+    }
 }

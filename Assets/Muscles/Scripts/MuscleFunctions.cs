@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class MuscleFunctions : MonoBehaviour
     public bool initialized = false;
     public bool active = true;
     public bool transitioning = false;
+    float _alphaMuscles = .1f;
     [SerializeField] Material _transitionToTransparentMaterial;
     [SerializeField] Material _transitionToMusclesMaterial;
     [SerializeField] Material _muscleMaterial;
@@ -492,8 +494,14 @@ public class MuscleFunctions : MonoBehaviour
         };
 
     List<Renderer> _muscleRenderers;
+    List<Collider> _muscleColliders;
     List<Renderer> _transitioningRendersToMuscle;
     List<Renderer> _transitioningRendersTotransparent;
+    List<GameObject> _visibleObjects = new();
+
+    LegJoint _currentJoint = LegJoint.Hip;
+    LegPlane _currentPlane = LegPlane.Sagittal;
+    LegMovement _currentMovement = LegMovement.None;
 
     void Awake() {
         if (Instance == null) {
@@ -505,19 +513,21 @@ public class MuscleFunctions : MonoBehaviour
         }
 
         _muscleRenderers = new List<Renderer>();
+        _muscleColliders = new List<Collider>();
         foreach (var muscle in _legMuscles) {
             if (muscle.MuscleObject == null) continue;
+            Collider[] colliders = muscle.MuscleObject.GetComponentsInChildren<Collider>();
+            foreach (var c in colliders) _muscleColliders.Add(c);
             Renderer[] renderers = muscle.MuscleObject.GetComponentsInChildren<Renderer>();
             foreach (var r in renderers) _muscleRenderers.Add(r);
         }
         ShowAllMuscles();
     }
 
-    void ShowAllMuscles() {
+    public void ShowAllMuscles() {
         if (active) return;
         foreach (var muscle in _legMuscles) {
             if (muscle.MuscleObject == null) continue;
-            muscle.MuscleObject.SetActive(true);
             Renderer[] renderers = muscle.MuscleObject.GetComponentsInChildren<Renderer>();
             foreach (var r in renderers) {
                 if (r.sharedMaterial != _muscleMaterial) {
@@ -525,17 +535,31 @@ public class MuscleFunctions : MonoBehaviour
                 }
             }
         }
+        foreach (var collider in _muscleColliders) {
+            collider.enabled = true;
+        }
+    }
+
+    public void ShowLastSelected() {
+        if (!active) return;
+        if (_currentPlane == LegPlane.None)
+            SetMusclesByMovement(_currentJoint, _currentMovement);
+        else
+            SetMusclesByPlane(_currentJoint, _currentPlane);
     }
 
     public void SetMusclesByPlane(LegJoint legJoint, LegPlane legPlane) {
-        ShowAllMuscles();
+        _currentJoint = legJoint;
+        _currentPlane = legPlane;
+        _currentMovement = LegMovement.None; // Reset movement when changing plane
         if (!active) return;
         transitioning = true;
         _transitioningRendersToMuscle = new List<Renderer>();
         _transitioningRendersTotransparent = new List<Renderer>();
+        _visibleObjects.Clear();
         foreach (var muscle in _legMuscles) {
             if (muscle.MuscleObject == null) continue;
-            muscle.MuscleObject.SetActive(false);
+            //muscle.MuscleObject.SetActive(false);
 
             bool matches = (muscle.Joint1 == legJoint && muscle.Plane1 == legPlane) ||
                            (muscle.Joint2 == legJoint && muscle.Plane2 == legPlane);
@@ -543,7 +567,8 @@ public class MuscleFunctions : MonoBehaviour
             Renderer[] renderers = muscle.MuscleObject.GetComponentsInChildren<Renderer>();
             foreach (var r in renderers) {
                 if (matches) {
-                    muscle.MuscleObject.SetActive(true);
+                    _visibleObjects.Add(muscle.MuscleObject);
+                    //muscle.MuscleObject.SetActive(true);
                     if (r.sharedMaterial != _muscleMaterial) {
                         _transitioningRendersToMuscle.Add(r);
                         r.sharedMaterial = _transitionToMusclesMaterial;
@@ -555,20 +580,35 @@ public class MuscleFunctions : MonoBehaviour
                     }
                 }
             }
+
+            Collider[] colliders = muscle.MuscleObject.GetComponentsInChildren<Collider>();
+            foreach (var c in colliders) {
+                if (matches) {
+                    c.enabled = true;
+                } else {
+                    c.enabled = false;
+                }
+            }
         }
         StartCoroutine(FadeAlphas());
     }
 
+    public bool MuscleVisible(GameObject muscleObject) {
+        return _visibleObjects.Contains(muscleObject);
+    }
+
     public void SetMusclesByMovement(LegJoint legJoint, LegMovement legMovement) {
-        ShowAllMuscles();
+        _currentJoint = legJoint;
+        _currentPlane = LegPlane.None; // Reset plane when changing movement
+        _currentMovement = legMovement;
         if (!active) return;
         transitioning = true;
         _transitioningRendersToMuscle = new List<Renderer>();
         _transitioningRendersTotransparent = new List<Renderer>();
-
+        _visibleObjects.Clear();
         foreach (var muscle in _legMuscles) {
             if (muscle.MuscleObject == null) continue;
-            muscle.MuscleObject.SetActive(false);
+            //muscle.MuscleObject.SetActive(false);
 
             bool matches = (muscle.Joint1 == legJoint && muscle.JointMovement1 == legMovement) ||
                            (muscle.Joint2 == legJoint && muscle.JointMovement2 == legMovement);
@@ -576,7 +616,8 @@ public class MuscleFunctions : MonoBehaviour
             Renderer[] renderers = muscle.MuscleObject.GetComponentsInChildren<Renderer>();
             foreach (var r in renderers) {
                 if (matches) {
-                    muscle.MuscleObject.SetActive(true);
+                    _visibleObjects.Add(muscle.MuscleObject);
+                    //muscle.MuscleObject.SetActive(true);
                     if (r.sharedMaterial != _muscleMaterial) {
                         _transitioningRendersToMuscle.Add(r);
                         r.sharedMaterial = _transitionToMusclesMaterial;
@@ -586,6 +627,15 @@ public class MuscleFunctions : MonoBehaviour
                         _transitioningRendersTotransparent.Add(r);
                         r.sharedMaterial = _transitionToTransparentMaterial;
                     }
+                }
+            }
+
+            Collider[] colliders = muscle.MuscleObject.GetComponentsInChildren<Collider>();
+            foreach (var c in colliders) {
+                if (matches) {
+                    c.enabled = true;
+                } else {
+                    c.enabled = false;
                 }
             }
         }
@@ -600,10 +650,10 @@ public class MuscleFunctions : MonoBehaviour
             float p = t / duration;
             p = p * p * (3f - 2f * p); // ease in-out
 
-            float a = Mathf.Lerp(1, 0f, p);
+            float a = Mathf.Lerp(1, _alphaMuscles, p);
             _transitionToTransparentMaterial.SetFloat("_Alpha", a);
 
-            float b = Mathf.Lerp(0f, 1f, p);
+            float b = Mathf.Lerp(_alphaMuscles, 1f, p);
             _transitionToMusclesMaterial.SetFloat("_Alpha", b);
 
             t += Time.deltaTime;
@@ -611,12 +661,19 @@ public class MuscleFunctions : MonoBehaviour
         }
 
         foreach (var muscle in _transitioningRendersTotransparent) {
-            muscle.gameObject.SetActive(false);
+            //muscle.gameObject.SetActive(false);
+            muscle.sharedMaterial = _transparentMaterial;
         }
 
         foreach (var item in _transitioningRendersToMuscle) {
             item.sharedMaterial = _muscleMaterial;
         }
         transitioning = false;
+    }
+
+    public void Setopacity(float value) {
+        _alphaMuscles = value;
+        //_transitioningRendersTotransparent[0].sharedMaterial.SetFloat("_Alpha", _alphaMuscles);
+        _transparentMaterial.SetFloat("_Alpha", _alphaMuscles);
     }
 }

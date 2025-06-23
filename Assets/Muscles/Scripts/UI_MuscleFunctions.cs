@@ -14,6 +14,7 @@ public class UI_MuscleFunctions : MonoBehaviour
     [SerializeField] TMPro.TMP_Dropdown _type;
     [SerializeField] TMPro.TMP_Dropdown _plane;
     [SerializeField] TMPro.TMP_Dropdown _movement;
+    [SerializeField] Slider _sliderOpacity;
 
     IEnumerator Start() {
         while (!MuscleFunctions.Instance.initialized) {
@@ -25,8 +26,8 @@ public class UI_MuscleFunctions : MonoBehaviour
         _panelMovement.SetActive(false);
         SetMovementOptions(0);
         _movement.value = 0; // Default to first movement option
-        _showSelected.isOn = false;
-        OnShowSelectedChanged(false);
+        if (MuscleFunctions.Instance != null && MuscleFunctions.Instance.initialized)
+            _showSelected.isOn = MuscleFunctions.Instance.active;
     }
 
     void OnEnable() {
@@ -39,6 +40,7 @@ public class UI_MuscleFunctions : MonoBehaviour
             _showSelected.isOn = MuscleFunctions.Instance.active;
             Select();
         }
+        _sliderOpacity.onValueChanged.AddListener(OnSliderOpacityChanged);
     }
 
     void OnDisable() {
@@ -47,6 +49,11 @@ public class UI_MuscleFunctions : MonoBehaviour
         _type.onValueChanged.RemoveListener(OnTypeChanged);
         _plane.onValueChanged.RemoveListener(OnPlaneChanged);
         _movement.onValueChanged.RemoveListener(OnMovementChanged);
+        _sliderOpacity.onValueChanged.RemoveListener(OnSliderOpacityChanged);
+    }
+
+    void OnSliderOpacityChanged(float value) {
+        MuscleFunctions.Instance.Setopacity(value);
     }
 
     void OnShowSelectedChanged(bool active) {
@@ -55,7 +62,10 @@ public class UI_MuscleFunctions : MonoBehaviour
         _type.interactable = active;
         _plane.interactable = active;
         _movement.interactable = active;
-        Select();
+        if (active)
+            Select();
+        else
+            MuscleFunctions.Instance.ShowAllMuscles();
     }
 
     void OnJointChanged(int index) {
@@ -73,10 +83,6 @@ public class UI_MuscleFunctions : MonoBehaviour
     void OnMovementChanged(int index) {
         Select();
     }
-    void OnShowAnimationChanged(bool isOn) {
-        Select();
-    }
-
     void Select() {
         if (_type.value == 0)
             MuscleFunctions.Instance.SetMusclesByPlane((LegJoint)_joint.value, (LegPlane)_plane.value);
@@ -112,29 +118,18 @@ public class UI_MuscleFunctions : MonoBehaviour
     }
 
     LegMovement GetMovementFromDropdown(string value) {
-        switch (value) {
-            case "Flexion":
-                return LegMovement.Flexion;
-            case "Extension":
-                return LegMovement.Extension;
-            case "Abduction":
-                return LegMovement.Abduction;
-            case "Adduction":
-                return LegMovement.Adduction;
-            case "Internal Rotation":
-                return LegMovement.InternalRotation;
-            case "External Rotation":
-                return LegMovement.ExternalRotation;
-            case "Plantar Flexion":
-                return LegMovement.PlantarFlexion;
-            case "Dorsiflexion":
-                return LegMovement.Dorsiflexion;
-            case "Inversion":
-                return LegMovement.Inversion;
-            case "Eversion":
-                return LegMovement.Eversion;
-            default:
-                return LegMovement.None;
-        }
+        return value switch {
+            "Flexion" => LegMovement.Flexion,
+            "Extension" => LegMovement.Extension,
+            "Abduction" => LegMovement.Abduction,
+            "Adduction" => LegMovement.Adduction,
+            "Internal Rotation" => LegMovement.InternalRotation,
+            "External Rotation" => LegMovement.ExternalRotation,
+            "Plantar Flexion" => LegMovement.PlantarFlexion,
+            "Dorsiflexion" => LegMovement.Dorsiflexion,
+            "Inversion" => LegMovement.Inversion,
+            "Eversion" => LegMovement.Eversion,
+            _ => LegMovement.None,
+        };
     }
 }

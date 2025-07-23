@@ -6,7 +6,7 @@ public class UI_Settings : MonoBehaviour
 	[SerializeField] Toggle _enablePassthrough;
 
 	void Start() {
-		_enablePassthrough.isOn = CameraMaskController.Instance.IsMaskVisible;
+		_enablePassthrough.isOn = PassthroughManager.Instance.IsPassthroughEnabled;
 	}
 
 	void OnEnable() {
@@ -18,6 +18,6 @@ public class UI_Settings : MonoBehaviour
 	}
 
 	void OnEnablePassthroughChanged(bool active) {
-		CameraMaskController.Instance.IsMaskVisible = active;
+		PassthroughManager.Instance.IsPassthroughEnabled = active;
 	}
 }

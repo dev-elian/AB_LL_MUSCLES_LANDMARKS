@@ -12,7 +12,15 @@ public class XRPlayer : MonoBehaviour
 	[SerializeField]
 	private Transform _camera;
 
+	[SerializeField]
+	private Fader _fader;
+
 	private XRInputSubsystem _xrInputSubsystem;
+
+	private void Awake()
+	{
+		_fader.FadeInInstantly();
+	}
 
 	private void OnEnable()
 	{
@@ -55,6 +63,10 @@ public class XRPlayer : MonoBehaviour
 
 		// Rotation
 		_cameraOffset.RotateAround(_camera.position, Vector3.up, -_camera.eulerAngles.y);
+
+		yield return null; // Wait one frame
+
+		_fader.FadeOut();
 	}
 
 	private void OnTrackingOriginUpdated(XRInputSubsystem subsystem)

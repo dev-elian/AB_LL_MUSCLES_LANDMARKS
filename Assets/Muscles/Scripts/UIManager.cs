@@ -10,12 +10,14 @@ public class UIManager : MonoBehaviour {
     public GameObject infoCanvas;
     public GameObject musclesCanvas;
     public GameObject muscleFunctionsCanvas;
+    public GameObject settingsCanvas;
 
     [Header("Buttons")]
     public Button _btnMuscleList;
     public Button _btnMuscleFunctions;
     public Button _btnMuscleInfo;
     public Button _btnResetMuscle;
+    public Button _btnSettings;
 
     Vector3 _scaleHidden = Vector3.zero;
     Vector3 _scaleShown = Vector3.one;
@@ -29,6 +31,7 @@ public class UIManager : MonoBehaviour {
         _btnMuscleList.onClick.AddListener(UI_EnableMuscles);
         _btnMuscleInfo.onClick.AddListener(UI_EnableInfo);
         _btnMuscleFunctions.onClick.AddListener(UI_EnableMuscleFunctions);
+		_btnSettings.onClick.AddListener(UI_EnableSettings);
         DisableAll();
         transform.localScale = Vector3.zero;
     }
@@ -38,17 +41,20 @@ public class UIManager : MonoBehaviour {
         _btnMuscleList.onClick.RemoveListener(UI_EnableMuscles);
         _btnMuscleInfo.onClick.RemoveListener(UI_EnableInfo);
         _btnMuscleFunctions.onClick.RemoveListener(UI_EnableMuscleFunctions);
+		_btnSettings.onClick.RemoveListener(UI_EnableSettings);
     }
 
     void DisableAll() {
         infoCanvas.SetActive(false);
         musclesCanvas.SetActive(false);
         muscleFunctionsCanvas.SetActive(false);
+        settingsCanvas.SetActive(false);
 
         //Deselect Buttons
         _btnMuscleList.transform.GetChild(2).gameObject.SetActive(false);
         _btnMuscleFunctions.transform.GetChild(2).gameObject.SetActive(false);
         _btnMuscleInfo.transform.GetChild(2).gameObject.SetActive(false);
+        _btnSettings.transform.GetChild(2).gameObject.SetActive(false);
     }
     void SetPanelVisibility() {
         if (_visible) {
@@ -86,7 +92,15 @@ public class UIManager : MonoBehaviour {
         ResetThePositions.Instance.ResetPositions();
     }
 
-    IEnumerator ScaleRoutine(Vector3 from, Vector3 to, float duration) {
+	void UI_EnableSettings() {
+		bool toggled = !settingsCanvas.activeInHierarchy;
+		DisableAll();
+		settingsCanvas.SetActive(toggled);
+		_btnSettings.transform.GetChild(2).gameObject.SetActive(toggled);
+		OnMenuChanged?.Invoke();
+	}
+
+	IEnumerator ScaleRoutine(Vector3 from, Vector3 to, float duration) {
         float t = 0f;
         while (t < 1f) {
             t += Time.deltaTime / duration;
